@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed = .1f;
     [SerializeField] float turnSpeed = 6f;
     [SerializeField] float jumpStrength = 10f;
+    
     private void Awake()
     {
         input = GetComponent<PlayerInputDetector>();
@@ -28,12 +29,14 @@ public class PlayerController : MonoBehaviour
         input.MoveInput += OnMove;
         input.RotateInput += OnRotate;
         input.JumpInput += OnJump;
+        
     }
     private void OnDisable()
     {
         input.MoveInput -= OnMove;
         input.RotateInput -= OnRotate;
         input.JumpInput -= OnJump;
+        
     }
     void OnMove(Vector3 movement)
     {
@@ -51,4 +54,6 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Jump!");
         motor.Jump(jumpStrength);
     }
+
+    
 }

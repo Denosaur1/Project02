@@ -21,7 +21,7 @@ public class Level01Controller : MonoBehaviour
     {
         
         //Increase Score
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             IncreaseScore(5);
         }

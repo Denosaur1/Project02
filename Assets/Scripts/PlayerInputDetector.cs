@@ -10,12 +10,16 @@ public class PlayerInputDetector : MonoBehaviour
     public event Action<Vector3> MoveInput = delegate { };
     public event Action<Vector3> RotateInput = delegate { };
     public event Action JumpInput = delegate { };
+    public float sprintmod = 1f;
+    float sprint =  1f;
 
     private void Update()
     {
         DetectMoveInput();
         DetectRotateInput();
         DetectJumpInput();
+        DetectSprint();
+        
     }
     void DetectMoveInput()
     {
@@ -26,7 +30,8 @@ public class PlayerInputDetector : MonoBehaviour
         {
             Vector3 horizontalMovement = transform.right * xInput;
             Vector3 forwardMovement = transform.forward * yInput;
-            Vector3 movement = (horizontalMovement + forwardMovement).normalized;
+
+            Vector3 movement = sprint*(horizontalMovement + forwardMovement).normalized;
             MoveInput?.Invoke(movement);
         }
     }
@@ -54,7 +59,21 @@ public class PlayerInputDetector : MonoBehaviour
             JumpInput?.Invoke();
         }
     }
+    void DetectSprint()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            print("Sprint");
+            sprint = sprintmod;
+            
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            print("Stop Sprint");
+            sprint = 1f;
+        }
 
+    }
 
 
 

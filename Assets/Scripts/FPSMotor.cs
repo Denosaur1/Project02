@@ -5,13 +5,16 @@ using System;
 
 
 [RequireComponent(typeof(Rigidbody))]
+
 public class FPSMotor : MonoBehaviour
 {
     public event Action Land = delegate { };
 
     [SerializeField] Camera mainCamera = null;
     [SerializeField] GroundDetector groundDetector = null;
+    
     bool isGrounded = false;
+    
     [SerializeField] float cameraAngleLimit = 70f;
     private float currentCameraRotationX = 0;
     Rigidbody rigidBody = null;
@@ -19,15 +22,18 @@ public class FPSMotor : MonoBehaviour
     float turnAmountThisFrame = 0;
     float lookAmountThisFrame = 0;
     
+    
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+
     }
     private void FixedUpdate()
     {
         ApplyMovement(movementThisFrame);
         ApplyTurn(turnAmountThisFrame);
         ApplyLook(lookAmountThisFrame);
+        
     }
 
     public void Move(Vector3 requestedMovement)
@@ -74,6 +80,8 @@ public class FPSMotor : MonoBehaviour
     }
     void ApplyLook(float lookAmount)
     {
+        
+        
         if (lookAmount == 0)
             return;
 
@@ -103,5 +111,8 @@ public class FPSMotor : MonoBehaviour
     {
         isGrounded = false;
     }
+    
+    
+
 }
     
