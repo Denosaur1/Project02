@@ -6,25 +6,27 @@ using UnityEngine.UI;
 
 public class Level01Controller : MonoBehaviour
 {
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+
+
     [SerializeField] Text currentScoreTextView;
-    [SerializeField] GameObject PauseMenu;
+    
     int currentScore;
     private void Update()
     {
+        
         //Increase Score
         if (Input.GetKeyDown(KeyCode.S))
         {
             IncreaseScore(5);
         }
 
-        //Exit Level
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-
-            bool x = !PauseMenu.activeSelf;
-            PauseMenu.SetActive(x);
-            //ExitLevel();
-        }
+       
     }
 
     public void ExitLevel()
@@ -36,7 +38,8 @@ public class Level01Controller : MonoBehaviour
             Debug.Log("New High Score: " + currentScore);
         }
 
-
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene("MainMenu");
 
     }
