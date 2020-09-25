@@ -9,7 +9,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance = null;
     [SerializeField] AudioClip startingSong;
+    
     AudioSource audioSource;
+
 
     private void Start()
     {
@@ -41,4 +43,5 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
     
+   
 }

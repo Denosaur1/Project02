@@ -1666,6 +1666,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2139429604365195652, guid: b76670a29a3008a408c7b599587f6874,
+        type: 3}
+      propertyPath: startingSong
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f421f75ffe3fa14fa0c1dd77cd6eb18, type: 3}
     - target: {fileID: 2139429604365195653, guid: b76670a29a3008a408c7b599587f6874,
         type: 3}
       propertyPath: m_LocalPosition.x

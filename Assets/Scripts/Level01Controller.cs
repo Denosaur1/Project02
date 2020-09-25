@@ -8,14 +8,17 @@ public class Level01Controller : MonoBehaviour
 {
     private void Awake()
     {
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Health.isDed = false;
     }
 
 
 
     [SerializeField] Text currentScoreTextView;
-    
+    [SerializeField] HealthBar Health;
+
     int currentScore;
     private void Update()
     {
@@ -48,5 +51,16 @@ public class Level01Controller : MonoBehaviour
         currentScore += scoreIncrease;
         currentScoreTextView.text =
             "Score: " + currentScore.ToString();
+    }
+    public void ResetLevel()
+    {
+        int highScore = PlayerPrefs.GetInt("HighScore");
+        if (currentScore > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", currentScore);
+            Debug.Log("New High Score: " + currentScore);
+        }
+        SceneManager.LoadScene("Level01");
+        
     }
 }

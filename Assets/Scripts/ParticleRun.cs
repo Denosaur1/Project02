@@ -5,6 +5,8 @@ using UnityEngine;
 public class ParticleRun : MonoBehaviour
 {
     ParticleSystem trail;
+    
+    [SerializeField] AudioClip sound = null;
 
     void Start()
     {
@@ -18,15 +20,8 @@ public class ParticleRun : MonoBehaviour
         {
 
             trail.Play();
-
+            AudioHelper.PlayClip2D(sound,1f);
         }
-        /*
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-
-
-            trail.Stop();
-        }
-        */
+       
     }
 }
