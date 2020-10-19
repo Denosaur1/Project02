@@ -324,15 +324,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47a12514975774a8a8bee7dfe7e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 7817874255775852838, guid: 8a56517fba766254f92e679cb6983ee5, type: 3}
   EnemyVisuals: {fileID: 5149408422510332315}
   FrozenVisuals: {fileID: 718597978}
   ball: {fileID: 5149408421698116209}
   shootSpeed: 500
   PlayerDetected: 0
   time: 0
-  HitSound: {fileID: 0}
-  pCollider: {fileID: 0}
+  HitSound: {fileID: 8300000, guid: 588e389d8c4b26e4d9ff50000c143320, type: 3}
+  pCollider: {fileID: 7817874255775852824, guid: 8a56517fba766254f92e679cb6983ee5,
+    type: 3}
   freezeTime: 0
 --- !u!1 &5149408421112995436
 GameObject:

@@ -12,12 +12,16 @@ public class Boss : MonoBehaviour
     [SerializeField] GameObject PillarPhase3;
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject character;
+    
+   
+    
     private void Update()
     {
         if(phaseNumber == 1)
         {
             if( bossCounter == 4)
             {
+                
                 Debug.Log("The Center Is open!");
                 BossShield = false;
             }
@@ -30,6 +34,7 @@ public class Boss : MonoBehaviour
             if (bossCounter == 4)
             {
                 Debug.Log("The Center Is open!");
+               
                 BossShield = false;
             }
 

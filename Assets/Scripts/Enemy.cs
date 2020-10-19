@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
     void TimerStart()
     {
         time += Time.deltaTime;
-        if (time >= 5)
+        if (time >= 3)
         {
             time = 0;
             if (PlayerDetected == true && enemyFrozen == false)
