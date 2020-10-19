@@ -15,9 +15,9 @@ public class HealthBar : MonoBehaviour
     [SerializeField] GameObject  resetScreen = null;
     void Update()
     {
+        
+        
         if (isDed == false) { 
-
-
         HealthRemaining = (TotalHits - HitsTaken) * (width / TotalHits);
         var hpBarchange = hpBar.transform as RectTransform;
         hpBarchange.sizeDelta = new Vector2(HealthRemaining, hpBarchange.sizeDelta.y);
@@ -36,6 +36,7 @@ public class HealthBar : MonoBehaviour
         GameObject Playa = GameObject.Find("Character");
         
         Playa.SetActive(false);
+
         resetScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

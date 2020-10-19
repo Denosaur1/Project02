@@ -23,12 +23,13 @@ public class Level01Controller : MonoBehaviour
     private void Update()
     {
         
+        /*
         //Increase Score
         if (Input.GetKeyDown(KeyCode.Q))
         {
             IncreaseScore(5);
         }
-
+        */
        
     }
 
